@@ -92,7 +92,8 @@ h2 {
 .content .forgot-pass {
   position: relative;
   top: 2px;
-  font-size: 14px; }
+  font-size: 14px;
+  color: black; }
 
 .social-login a {
   text-decoration: none;

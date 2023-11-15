@@ -16,38 +16,36 @@
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Login #7</title>
+    <title>TMS</title>
   </head>
   <body>
   
-
+  <?php session_start(); ?>
   
   <div class="content">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <img src="images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
-        </div>
+       
         <div class="col-md-6 contents">
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="mb-4">
               <h3>Sign In</h3>
-              <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+              <h6 class="mb-4">Transforming Minds, Shaping Futures - Where Innovation Meets Education!</h6>
             </div>
-            <form action="#" method="post">
+            <form action="logincode.php" method="post">
               <div class="form-group first">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username">
+                <label for="username">Email</label>
+                <input type="text" class="form-control" id="username" name="email" required>
 
               </div>
               <div class="form-group last mb-4">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password">
+                <input type="password" class="form-control" id="password" name="password" required>
                 
               </div>
               
-              <div class="d-flex mb-5 align-items-center">
+              <div class="d-flex align-items-center">
                 <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
                   <input type="checkbox" checked="checked"/>
                   <div class="control__indicator"></div>
@@ -55,25 +53,22 @@
                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
               </div>
 
-              <input type="submit" value="Log In" class="btn btn-block btn-primary">
-
-              <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
-              
-              <div class="social-login">
-                <a href="#" class="facebook">
-                  <span class="icon-facebook mr-3"></span> 
-                </a>
-                <a href="#" class="twitter">
-                  <span class="icon-twitter mr-3"></span> 
-                </a>
-                <a href="#" class="google">
-                  <span class="icon-google mr-3"></span> 
-                </a>
+              <div class="d-flex mb-5 align-items-center">
+                <span class="ml-auto"><a href="#" class="forgot-pass">Create an Account</a></span> 
               </div>
+
+              <input type="submit" name="login" class="btn btn-block btn-primary">
+
+             
+            
             </form>
             </div>
           </div>
           
+        </div>
+
+        <div class="col-md-6">
+          <img src="images/TM.png" alt="Image" class="img-fluid">
         </div>
         
       </div>
@@ -85,5 +80,25 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+     
+<?php
+        if(isset($_SESSION['status']) && $_SESSION['status_code'] !='' )
+        {
+            ?>
+                <script>
+                swal({
+                  title: "<?php echo $_SESSION['status']; ?>",
+                icon: "<?php echo $_SESSION['status_code']; ?>",
+                });
+                </script>
+                <?php
+                unset($_SESSION['status']);
+                unset($_SESSION['status_code']);
+        }     
+ ?>
   </body>
 </html>
