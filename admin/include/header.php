@@ -22,6 +22,8 @@
 
     <link href="./vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 <style>
     /* The Modal (background) */
     .modal {

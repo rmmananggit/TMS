@@ -103,87 +103,56 @@ include('./include/topbar.php');
     </div>
     <!-- /.container-fluid -->
 
-    <!-- Bootstrap Modal -->
     <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div id="caption"></div>
-    </div>
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption"></div>
+</div>
 
     <script>
-        $(document).ready(function () {
-            $('.clickable-image').on('click', function () {
-                var imageData = $(this).data('image');
-                var modalImage = $('#modalImage');
-                var captionText = $('#caption');
+    $(document).ready(function () {
+        // Function to toggle pagination visibility
+        function togglePagination(visibility) {
+            $('#dataTable_paginate').css('display', visibility);
+        }
 
-                modalImage.attr('src', 'data:image;base64,' + imageData);
-                modalImage.alt = "Modal Image";
-                captionText.html("Proof of Billing");
+        // Click event for the screenshot
+        $('.clickable-image').on('click', function () {
+            var imageData = $(this).data('image');
+            var modalImage = $('#modalImage');
+            var captionText = $('#caption');
 
-                // Display the modal
-                $('#imageModal').css('display', 'block');
-            });
+            modalImage.attr('src', 'data:image;base64,' + imageData);
+            modalImage.alt = "Modal Image";
+            captionText.html("Proof of Billing");
 
-            // Close the modal when the close button is clicked
-            $('.close').on('click', function () {
-                $('#imageModal').css('display', 'none');
-            });
+            // Hide pagination when the modal is opened
+            togglePagination('none');
 
-            // Close the modal when clicking outside the modal content
-            $(window).on('click', function (event) {
-                var modal = $('#imageModal');
-                if (event.target == modal[0]) {
-                    modal.css('display', 'none');
-                }
-            });
+            // Display the modal
+            $('#imageModal').css('display', 'block');
         });
-    </script>
 
-    <script>
-        $(document).ready(function () {
-            // Function to toggle pagination visibility
-            function togglePagination(visibility) {
-                $('#dataTable_paginate').css('display', visibility);
-            }
+        // Close the modal when the close button is clicked
+        $('.close').on('click', function () {
+            // Show pagination when the modal is closed
+            togglePagination('block');
 
-            // Click event for the screenshot
-            $('.clickable-image').on('click', function () {
-                var imageData = $(this).data('image');
-                var modalImage = $('#modalImage');
-                var captionText = $('#caption');
+            $('#imageModal').css('display', 'none');
+        });
 
-                modalImage.attr('src', 'data:image;base64,' + imageData);
-                modalImage.alt = "Modal Image";
-                captionText.html("Proof of Billing");
-
-                // Hide pagination when the modal is opened
-                togglePagination('none');
-
-                // Display the modal
-                $('#imageModal').css('display', 'block');
-            });
-
-            // Close the modal when the close button is clicked
-            $('.close').on('click', function () {
+        // Close the modal when clicking outside the modal content
+        $(window).on('click', function (event) {
+            var modal = $('#imageModal');
+            if (event.target == modal[0]) {
                 // Show pagination when the modal is closed
                 togglePagination('block');
 
-                $('#imageModal').css('display', 'none');
-            });
-
-            // Close the modal when clicking outside the modal content
-            $(window).on('click', function (event) {
-                var modal = $('#imageModal');
-                if (event.target == modal[0]) {
-                    // Show pagination when the modal is closed
-                    togglePagination('block');
-
-                    modal.css('display', 'none');
-                }
-            });
+                modal.css('display', 'none');
+            }
         });
-    </script>
+    });
+</script>
 
 <?php
 include('./include/footer.php');

@@ -26,7 +26,7 @@
 </div>
 
 <li class="nav-item">
-    <a class="nav-link" href="manage_user.php">
+    <a class="nav-link" href="billing.php">
         <i class="fas fa-money-bill-alt"></i>
         <span>Billing</span></a>
 </li>
