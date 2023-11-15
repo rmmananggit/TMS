@@ -27,6 +27,13 @@
 
 <li class="nav-item">
     <a class="nav-link" href="manage_user.php">
+        <i class="fas fa-money-bill-alt"></i>
+        <span>Billing</span></a>
+</li>
+
+
+<li class="nav-item">
+    <a class="nav-link" href="manage_user.php">
         <i class="fas fa-fw fa-user"></i>
         <span>User</span></a>
 </li>

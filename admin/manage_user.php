@@ -61,11 +61,15 @@
                                     ?>
                                     <tr>
                                     <td><?= $row['id']; ?></td>
-                                    <td>
+                                    <td class="text-center">
                                     <?php 
-                                        echo '<img class="img-fluid img-bordered-sm" src = "data:image;base64,'.base64_encode($row['picture']).'" 
-                                        alt="image" style="height: 170px; max-width: 310px; object-fit: cover;">'; ?>
-                                    </td>
+                                        echo '<img class="img-fluid img-bordered-sm clickable-image" 
+                                            data-image="'.base64_encode($row['picture']).'" 
+                                            src="data:image;base64,'.base64_encode($row['picture']).'" 
+                                            alt="image" 
+                                            style="height: 170px; max-width: 310px; object-fit: cover;">'; 
+                                    ?>
+                                </td>
                                     <td><b><?= $row['firstname']; ?> <?= $row['lastname']; ?> <?= $row['suffix']; ?></b></td>
                                     <td>Purok <b><?= $row['purok']; ?> <?= $row['barangay']; ?> <?= $row['municipality']; ?></b></td>
                                     <td><?= $row['type']; ?></td>
@@ -82,7 +86,7 @@
 <div class="btn-group" role="group" aria-label="Basic outlined example">
 <a type="button" class="btn btn-outline-primary" href="user_profile.php?id=<?=$row['id'];?>">View</a>
 
-<button type="submit" name="delete_coordinator" value="<?=$row['id']; ?>" class="btn btn-outline-danger">Archive</button>
+<button type="submit" name="delete_coordinator" value="<?=$row['id']; ?>" class="btn btn-outline-danger">Delete</button>
 </div>
 
 </form>
@@ -114,17 +118,96 @@
 
 
 
+<!-- Modal for User Pictures -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption"></div>
+</div>
 
 
 
 
 
+<script>
+    $(document).ready(function () {
+        // Function to toggle modal visibility and set image attributes
+        function openModal(imageData) {
+            var modalImage = $('#modalImage');
+            var captionText = $('#caption');
 
+            modalImage.attr('src', 'data:image;base64,' + imageData);
+            modalImage.alt = "User Profile Picture";
+            captionText.html("User Profile Picture");
 
+            // Display the modal
+            $('#imageModal').css('display', 'block');
+        }
 
+        // Click event for the clickable image
+        $('.clickable-image').on('click', function () {
+            var imageData = $(this).data('image');
+            openModal(imageData);
+        });
 
+        // Close the modal when the close button is clicked
+        $('.close').on('click', function () {
+            $('#imageModal').css('display', 'none');
+        });
 
+        // Close the modal when clicking outside the modal content
+        $(window).on('click', function (event) {
+            var modal = $('#imageModal');
+            if (event.target == modal[0]) {
+                modal.css('display', 'none');
+            }
+        });
+    });
+</script>
 
+<script>
+    $(document).ready(function () {
+        // Function to toggle pagination visibility
+        function togglePagination(visibility) {
+            $('#dataTable_paginate').css('display', visibility);
+        }
+
+        // Click event for the screenshot
+        $('.clickable-image').on('click', function () {
+            var imageData = $(this).data('image');
+            var modalImage = $('#modalImage');
+            var captionText = $('#caption');
+
+            modalImage.attr('src', 'data:image;base64,' + imageData);
+            modalImage.alt = "Modal Image";
+
+            // Hide pagination when the modal is opened
+            togglePagination('none');
+
+            // Display the modal
+            $('#imageModal').css('display', 'block');
+        });
+
+        // Close the modal when the close button is clicked
+        $('.close').on('click', function () {
+            // Show pagination when the modal is closed
+            togglePagination('block');
+            
+            $('#imageModal').css('display', 'none');
+        });
+
+        // Close the modal when clicking outside the modal content
+        $(window).on('click', function (event) {
+            var modal = $('#imageModal');
+            if (event.target == modal[0]) {
+                // Show pagination when the modal is closed
+                togglePagination('block');
+                
+                modal.css('display', 'none');
+            }
+        });
+    });
+</script>
 
 
 
