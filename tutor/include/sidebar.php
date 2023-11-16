@@ -27,6 +27,12 @@
 
 <li class="nav-item">
     <a class="nav-link" href="#.php">
+        <i class="fas fa-fw fa-briefcase"></i>
+        <span>Jobs</span></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="#.php">
         <i class="fas fa-fw fa-user"></i>
         <span>Learning Resources</span></a>
 </li>
@@ -35,6 +41,18 @@
 <div class="sidebar-heading">
     VIEW
 </div>
+
+<li class="nav-item">
+    <a class="nav-link" href="#.php">
+        <i class="fas fa-fw fa-poll-h"></i>
+        <span>Recent Jobs</span></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="#.php">
+        <i class="fas fa-fw fa-business-time"></i>
+        <span>Job Application</span></a>
+</li>
 
 <li class="nav-item">
     <a class="nav-link" href="#.php">

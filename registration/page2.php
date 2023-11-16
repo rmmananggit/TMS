@@ -56,15 +56,19 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
-              
-                  <div class="form-group last mb-3">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" placeholder="Your Password" id="password">
-                  </div>
+
+              <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="suffix">Role</label>
+                    <select class="form-control" name="role">
+                    <option selected>Select Role</option>
+                      <option value="2">Tutor</option>
+                      <option value="3">Tutee</option>
+                    </select>
+                  </div>    
                 </div>
+
                 <div class="col-md-6">
-              
                   <div class="form-group last mb-3">
                     <label for="re-password">Confirm Password</label>
                     <input type="password" class="form-control" placeholder="Your Password" id="re-password">

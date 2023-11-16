@@ -28,7 +28,7 @@
 <li class="nav-item">
     <a class="nav-link" href="billing.php">
         <i class="fas fa-money-bill-alt"></i>
-        <span>Billing</span></a>
+        <span>Payment Method</span></a>
 </li>
 
 

@@ -52,7 +52,7 @@
   <div class="container-fluid" style="background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);">
     <div class="container p-5">
       <div class="row">
-        <div class="col-lg-4 col-md-12 mb-4">
+        <div class="col-lg-6 col-md-12 mb-4">
           <div class="card h-100 shadow-lg">
             <div class="card-body">
               <div class="text-center p-3">
@@ -85,54 +85,15 @@
           </div>
         </div>
 
-        
-        <div class="col-lg-4 col-md-12 mb-4">
-          <div class="card h-100 shadow-lg">
-            <div class="card-body">
-              <div class="text-center p-3">
-                <h5 class="card-title">Standard Plan</h5>
-                <small>Advanced</small>
-                <br><br>
-                <span class="h2">₱200</span>/month
-              </div>
-  
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> All features from the Basic Plan</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Unlimited access to live sessions and webinars</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Additional study materials and resources</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Priority email support</li>
-              <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-              </svg> Monthly progress reports</li>
-            </ul>
 
-            <br>
-
-            <div class="card-body text-center">
-            <a href="page1.php" class="btn btn-outline-primary btn-lg" style="border-radius:30px">Select</a>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="col-lg-4 col-md-12 mb-4">
+        <div class="col-lg-6 col-md-12 mb-4">
           <div class="card h-100 shadow-lg">
             <div class="card-body">
               <div class="text-center p-3">
                 <h5 class="card-title">Premium Plan</h5>
                 <small>Pro</small>
                 <br><br>
-                <span class="h2">₱300</span>/month
+                <span class="h2">₱1000</span>/yearly
               </div>
            
             </div>
