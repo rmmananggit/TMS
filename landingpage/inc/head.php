@@ -14,7 +14,7 @@
   <link href="landingpage/assets-landing/css/modern-business.css" rel="stylesheet">
 
    <!-- Bootstrap Main CSS teamplate -->
-   <link rel="stylesheet" href="landingpage/assets-landing/css/style.css">
+   <link rel="stylesheet" href="landingpage/assets-landi!ng/css/style.css">
 
   <!--Font Awesome--->
   <link href="usr/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
