@@ -55,10 +55,10 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="#" style="color: black;  font-size: 14px;"><u>Create an Account!</u></a>
+                                        <a class="small" href="#" style="color: black;  font-size: 14px;">Create an Account</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="index.php" style="color: black;  font-size: 14px;"><u>Already have an account? Login!</u></a>
+                                        <a class="small" href="index.php" style="color: black;  font-size: 14px;">Already have an account? Login!</a>
                                     </div>
                                 </div>
                             </div>

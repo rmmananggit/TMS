@@ -29,7 +29,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 py-5">
-            <h3><b>Registration Page 2</b></h3>
+            <h3><b>Register as Tutor</b></h3>
             <p class="mb-4" style="color: black;">Empowering Minds, Crafting Futures - A Nexus of Innovation and Education!</p>
             <form action="#" method="post" enctype="multipart/form-data">
 
@@ -43,18 +43,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group first">
-                    <label for="suffix">Register As:</label>
-                    <select class="form-control" name="role" id="roleSelect" onchange="toggleButton()">
-                      <option selected disabled>Select Role</option>
-                      <option value="2">Tutor</option>
-                      <option value="3">Tutee</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
+              
               
 
               <input type="submit" value="Submit" class="btn px-5 btn-primary" id="submitButton">
@@ -67,16 +56,6 @@
   </div>
 
   <script>
-    function toggleButton() {
-      var roleSelect = document.getElementById('roleSelect');
-      var submitButton = document.getElementById('submitButton');
-
-      if (roleSelect.value === '3') { // '3' corresponds to the value for Tutee
-        submitButton.value = 'Submit';
-      } else if (roleSelect.value === '2') { // '2' corresponds to the value for Tutor
-        submitButton.value = 'Next';
-      }
-    }
 
     function toggleAdditionalInfo() {
       var roleSelect = document.getElementById('roleSelect');

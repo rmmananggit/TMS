@@ -19,8 +19,9 @@
     <title>TMS: Registration</title>
   </head>
   <body>
-  
 
+  <?php session_start(); ?>
+  
   <div class="d-lg-flex half">
     <div class="bg order-1 order-md-2" style="background-image: url('images/register.png');"></div>
     <div class="contents order-2 order-md-1">
@@ -28,33 +29,33 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 py-3">
-            <h3><b>Registration Page 1</b></h3>
+            <h3><b>Register as Tutee</b></h3>
             <p class="mb-4" style="color: black;">Empowering Minds, Crafting Futures - A Nexus of Innovation and Education!</p>
-            <form action="processpage1.php" method="post">
+            <form action="page1_process.php" method="post">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group first">
                     <label for="firstname">First Name</label>
-                    <input type="text" class="form-control" placeholder="e.g. John" name="firstname">
+                    <input required type="text" class="form-control" placeholder="e.g. John" name="firstname">
                   </div>    
                 </div>
                 <div class="col-md-6">
                   <div class="form-group first">
-                    <label for="middlename">Middle Name</label>
-                    <input type="text" class="form-control" placeholder="e.g. Smith" name="middlename">
+                    <label for="middlename">Middle Name  <small>(Optional)</small></label>
+                    <input  type="text" class="form-control" placeholder="e.g. Smith" name="middlename">
                   </div>    
                 </div>
                 <div class="col-md-6">
                   <div class="form-group first">
                     <label for="lastname">Last Name</label>
-                    <input type="text" class="form-control" placeholder="e.g. Creed" name="lastname">
+                    <input required type="text" class="form-control" placeholder="e.g. Creed" name="lastname">
                   </div>    
                 </div>
                 <div class="col-md-6">
                   <div class="form-group first">
-                    <label for="suffix">Suffix</label>
+                    <label for="suffix">Suffix <small>(Optional)</small></label>
                     <select class="form-control" name="suffix">
-                      <option selected >N/A</option>
+                      <option selected value="N/A">N/A</option>
                       <option value="JR">JR</option>
                       <option value="SR">SR</option>
                       <option value="II">II</option>
@@ -69,7 +70,7 @@
                 <div class="col-md-12">
                   <div class="form-group first">
                     <label for="email">Email Address</label>
-                    <input type="email" class="form-control" placeholder="e.g. john@your-domain.com" name="email">
+                    <input required type="email" class="form-control" placeholder="e.g. john@your-domain.com" name="email">
                   </div>    
                 </div>
               </div>
@@ -78,14 +79,14 @@
               
                   <div class="form-group last mb-3">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" placeholder="Your Password" id="password">
+                    <input required type="password" class="form-control" placeholder="Your Password" name="password">
                   </div>
                 </div>
                 <div class="col-md-6">
               
                   <div class="form-group last mb-3">
                     <label for="re-password">Confirm Password</label>
-                    <input type="password" class="form-control" placeholder="Your Password" id="re-password">
+                    <input required type="password" class="form-control" placeholder="Your Password" name="re_password">
                   </div>
                 </div>
               </div>
@@ -93,25 +94,25 @@
                 <div class="col-md-6">
                   <div class="form-group first">
                     <label for="lname">Phone Number</label>
-                    <input type="text" class="form-control" placeholder="09123456789" name="phonenumber">
+                    <input required type="text" class="form-control" placeholder="09123456789" name="phonenumber">
                   </div>    
                 </div>
                 <div class="col-md-6">
                   <div class="form-group first">
                     <label for="lname">Birthday</label>
-                    <input type="date" class="form-control" name="birthday">
+                    <input required type="date" class="form-control" name="birthday">
                   </div>    
                 </div>
                 <div class="col-md-6">
                   <div class="form-group first">
                     <label for="purok">Purok</label>
-                    <input type="text" class="form-control" placeholder="e.g. 1" name="purok">
+                    <input required type="text" class="form-control" placeholder="e.g. 1" name="purok">
                   </div>    
                 </div>
                 <div class="col-md-6">
                   <div class="form-group first">
                     <label for="barangay">Barangay</label>
-                    <input type="text" class="form-control" placeholder="e.g. San Juan" name="barangay">
+                    <input required type="text" class="form-control" placeholder="e.g. San Juan" name="barangay">
                   </div>    
                 </div>
 
@@ -132,5 +133,24 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+      
+<?php
+  if(isset($_SESSION['status']) && $_SESSION['status_code'] !='' )
+  {
+      ?>
+          <script>
+          swal({
+            title: "<?php echo $_SESSION['status']; ?>",
+          icon: "<?php echo $_SESSION['status_code']; ?>",
+          });
+          </script>
+          <?php
+          unset($_SESSION['status']);
+          unset($_SESSION['status_code']);
+  }     
+?>
   </body>
 </html>
