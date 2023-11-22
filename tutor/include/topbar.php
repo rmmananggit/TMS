@@ -67,7 +67,7 @@
       $user = mysqli_fetch_assoc($query_run);
 
       if($user && isset($user['picture'])) {
-        echo '<img src="data:image;base64,'.base64_encode($user['picture']).'" alt="Profile" class="img-profile rounded-circle img-fluid">';
+        echo '<img src="data:image;base64,'.base64_encode($user['picture']).'" class="img-profile rounded-circle img-fluid">';
       } else {
         echo '<img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">';
       }

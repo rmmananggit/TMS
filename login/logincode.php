@@ -13,8 +13,8 @@ if (isset($_POST['login'])) {
         `user`.password, 
         `user`.firstname, 
         `user`.lastname, 
-        `user`.account_type, 
-        `user`.account_status
+        `user`.user_type, 
+        `user`.user_status
     FROM
         `user`
     WHERE
@@ -27,14 +27,14 @@ if (isset($_POST['login'])) {
         foreach ($login_query_run as $data) {
             $user_id = $data['id'];
             $full_name = $data['firstname'] . ' ' . $data['lastname'];
-            $account_status = $data['account_status'];
-            $account_type = $data['account_type'];
+            $user_status = $data['user_status'];
+            $user_type = $data['user_type'];
             $user_email = $data['email'];
         }
 
         $_SESSION['auth'] = true;
-        $_SESSION['account_type'] = "$account_type";
-        $_SESSION['u_status'] = "$account_status";
+        $_SESSION['user_type'] = "$user_type";
+        $_SESSION['u_status'] = "$user_status";
         $_SESSION['auth_user'] = [
             'user_id' => $user_id,
             'user_name' => $full_name,
@@ -53,17 +53,17 @@ if (isset($_POST['login'])) {
             exit(0);
         } elseif ($_SESSION['u_status'] == '1') {
             // Proceed to login based on account type
-            if ($_SESSION['account_type'] == '1') {
+            if ($_SESSION['user_type'] == '1') {
                 $_SESSION['status'] = "Welcome $full_name";
                 $_SESSION['status_code'] = "success";
                 header("Location: ../admin/index.php");
                 exit(0);
-            } elseif ($_SESSION['account_type'] == '2') {
+            } elseif ($_SESSION['user_type'] == '2') {
                 $_SESSION['status'] = "Welcome $full_name!";
                 $_SESSION['status_code'] = "success";
                 header("Location: ../tutor/index.php");
                 exit(0);
-            } elseif ($_SESSION['account_type'] == '3') {
+            } elseif ($_SESSION['user_type'] == '3') {
                 $_SESSION['status'] = "Welcome $full_name!";
                 $_SESSION['status_code'] = "success";
                 header("Location: ../tutee/index.php");

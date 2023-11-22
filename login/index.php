@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="d-flex mb-5 align-items-center">
-                  <span class="ml-auto"><a href="../registration/register_as.php" class="forgot-pass">Create an Account</a></span> 
+                  <span class="ml-auto"><a href="../registration/index.php" class="forgot-pass">Create an Account</a></span> 
                 </div>
 
                 <input type="submit" name="login" class="btn btn-block btn-primary">

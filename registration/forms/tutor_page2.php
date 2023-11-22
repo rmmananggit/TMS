@@ -73,7 +73,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group first">
-                                    <label for="expeng">Experience:</label>
+                                    <label for="expeng">Years of Experience:</label>
                                     <input required type="text" class="form-control" placeholder="e.g. 1" name="expeng"
                                            id="expeng" disabled>
                                 </div>
@@ -125,7 +125,7 @@
     </div>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-6 mt-3">
     <div class="form-group first">
         <input required type="text" class="form-control" placeholder="e.g. 1" name="guitar_experience" id="guitar_experience" disabled>
     </div>
